@@ -3,6 +3,10 @@ project(UniDB)
 
 set(CMAKE_CXX_STANDARD 20)
 
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# اضافه کردن پوشه‌ها
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/models
