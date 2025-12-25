@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
-#include "engine/ExecutionEngine.h"
-#include "parser/QueryParser.h"
+#include "src/engine/ExecutionEngine.h"
+#include "src/parser/QueryParser.h"
 
 using namespace std;
 
 void printHelp() {
-    cout << "\n=== UniDB ===" << endl;
+    cout << "\n=== UniDB NoSQL Database ===" << endl;
     cout << "Commands:" << endl;
     cout << "  db.students.insertOne({_id: 1, name: \"Ali\", gpa: 18.5})" << endl;
     cout << "  db.students.deleteOne({_id: 1})" << endl;
@@ -25,12 +25,12 @@ void printHelp() {
 }
 
 int main() {
-    cout << "=== UniDB ===" << endl;
+    cout << "=== UniDB NoSQL Database ===" << endl;
     cout << "Type 'help' for commands, 'exit' to quit" << endl;
 
     ExecutionEngine engine;
-    string input;
 
+    string input;
     while (true) {
         cout << "\nunidb> ";
         getline(cin, input);
@@ -45,7 +45,9 @@ int main() {
             continue;
         }
 
-        if (input.empty()) continue;
+        if (input.empty()) {
+            continue;
+        }
 
         try {
             Command cmd = QueryParser::parse(input);
