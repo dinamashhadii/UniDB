@@ -1,14 +1,10 @@
-#ifndef COLLECTION_H
-#define COLLECTION_H
-
-#include "../models/Document.h"
+#pragma once
 #include <vector>
-#include <string>
+#include "models/Document.h"
 
 class Collection {
 public:
     virtual ~Collection() = default;
-
     virtual bool insertOne(const Document& doc) = 0;
     virtual bool deleteOne(int id) = 0;
     virtual Document* findById(int id) = 0;
@@ -19,5 +15,3 @@ public:
     virtual double average(const std::string& field) = 0;
     virtual Collection* clone() const = 0;
 };
-
-#endif

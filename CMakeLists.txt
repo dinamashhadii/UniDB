@@ -1,18 +1,19 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.10)
 project(UniDB)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# اضافه کردن پوشه‌ها
-include_directories(
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/models
-        ${CMAKE_CURRENT_SOURCE_DIR}/storage
-        ${CMAKE_CURRENT_SOURCE_DIR}/engine
-        ${CMAKE_CURRENT_SOURCE_DIR}/parser
+add_executable(UniDB
+        main.cpp
+        storage/ArrayCollection.cpp
+        engine/ExecutionEngine.cpp
 )
 
-add_executable(UniDB main.cpp)
+# هدرها در این مسیرها هستند
+target_include_directories(UniDB PRIVATE
+        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/models
+        ${CMAKE_SOURCE_DIR}/storage
+        ${CMAKE_SOURCE_DIR}/engine
+        ${CMAKE_SOURCE_DIR}/parser
+)
