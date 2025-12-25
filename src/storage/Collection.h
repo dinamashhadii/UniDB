@@ -20,4 +20,4 @@ public:
     virtual Collection* clone() const = 0;
 };
 
-#endif // COLLECTION_H
+#endif

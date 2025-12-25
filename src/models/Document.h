@@ -12,4 +12,4 @@ struct Document {
         : id(_id), name(_name), gpa(_gpa) {}
 };
 
-#endif // DOCUMENT_H
+#endif

@@ -176,7 +176,6 @@ public:
                 return "ERROR: Unknown command type";
         }
     }
-
     void switchToLinkedList() {
         std::vector<Document> currentData = collection->findAll();
         collection = std::make_unique<LinkedListCollection>();
@@ -185,7 +184,6 @@ public:
             collection->insertOne(doc);
         }
     }
-
     void switchToArray() {
         std::vector<Document> currentData = collection->findAll();
         collection = std::make_unique<ArrayCollection>();
@@ -194,21 +192,15 @@ public:
             collection->insertOne(doc);
         }
     }
-
-    // Get transaction stack size (for debugging)
     size_t getTransactionStackSize() const {
         return transactionStack.size();
     }
-
-    // Get batch queue size (for debugging)
     size_t getBatchQueueSize() const {
         return batchQueue.size();
     }
-
-    // Get current collection type
     std::string getCollectionType() const {
-        return "ArrayCollection"; // یا می‌توانید نوع را تشخیص دهید
+        return "ArrayCollection";
     }
 };
 
-#endif // EXECUTIONENGINE_H
+#endif

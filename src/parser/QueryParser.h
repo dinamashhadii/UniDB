@@ -204,7 +204,6 @@ private:
                 cmd.field = content.substr(quote1 + 1, quote2 - quote1 - 1);
             }
         }
-
         size_t valuePos = content.find("value:");
         if (valuePos != std::string::npos) {
             size_t quote1 = content.find('"', valuePos);
@@ -213,9 +212,8 @@ private:
                 cmd.value = content.substr(quote1 + 1, quote2 - quote1 - 1);
             }
         }
-
         return cmd;
     }
 };
 
-#endif // QUERYPARSER_H
+#endif

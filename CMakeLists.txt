@@ -3,7 +3,6 @@ project(UniDB)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# اضافه کردن پوشه‌های شامل
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/models

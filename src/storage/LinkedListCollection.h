@@ -159,4 +159,4 @@ public:
     }
 };
 
-#endif // LINKEDLISTCOLLECTION_H
+#endif

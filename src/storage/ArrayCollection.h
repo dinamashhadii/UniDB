@@ -96,5 +96,4 @@ public:
         return newCollection;
     }
 };
-
-#endif // ARRAYCOLLECTION_H
+#endif
